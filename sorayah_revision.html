@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorayah Bell — GCSE Maths Foundation Revision Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0f1117;
+    --card:     #1e2333;
+    --border:   #2a3050;
+    --text:     #e8eaf2;
+    --muted:    #7a84a8;
+    --a1: #f472b6; --a2: #fb923c; --a3: #34d399; --a4: #60a5fa; --a5: #c084fc;
+    --green: #4ade80; --orange: #fb923c; --red: #f87171;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;padding:0 0 80px}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#0f1117,#1a1129 40%,#120f1e);border-bottom:1px solid var(--border);padding:52px 48px 38px;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(244,114,182,.12),transparent 70%),radial-gradient(ellipse 40% 60% at 10% 80%,rgba(192,132,252,.08),transparent 70%);pointer-events:none}
+  .hero-inner{position:relative;max-width:1200px;margin:0 auto}
+  .hero-kicker{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--a1);margin-bottom:14px}
+  .hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,4vw,3rem);line-height:1.15;color:#fff;margin-bottom:10px}
+  .hero h1 em{color:var(--a3);font-style:normal}
+  .hero-sub{font-size:15px;color:var(--muted);margin-bottom:28px;max-width:620px}
+  .pills{display:flex;flex-wrap:wrap;gap:9px}
+  .pill{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:100px;font-size:12px;font-weight:600;border:1px solid}
+  .p1{color:var(--a1);border-color:rgba(244,114,182,.35);background:rgba(244,114,182,.08)}
+  .p2{color:var(--a2);border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.08)}
+  .p3{color:var(--a3);border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.08)}
+  .p4{color:var(--a4);border-color:rgba(96,165,250,.35);background:rgba(96,165,250,.08)}
+
+  /* INTRO */
+  .intro-wrap{max-width:1200px;margin:28px auto 0;padding:0 48px}
+  .intro-box{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--a1);border-radius:10px;padding:18px 22px;font-size:14px;color:var(--muted)}
+  .intro-box strong{color:var(--text)}
+
+  /* SCORES */
+  .scores-wrap{max-width:1200px;margin:24px auto 0;padding:0 48px}
+  .scores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px}
+  .sc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:3px}
+  .sc .lbl{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .sc .val{font-family:'DM Serif Display',serif;font-size:1.9rem;color:#fff;line-height:1}
+  .sc .sub{font-size:12px;color:var(--muted)}
+  .sc.m1{border-top:3px solid var(--a1)}.sc.m2{border-top:3px solid var(--a4)}
+  .sc.gap{border-top:3px solid var(--orange)}.sc.tgt{border-top:3px solid var(--a3)}
+
+  /* BAND LABELS */
+  .band-wrap{max-width:1200px;margin:36px auto 14px;padding:0 48px}
+  .band{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+  .b1{background:rgba(74,222,128,.1);color:var(--green);border:1px solid rgba(74,222,128,.3)}
+  .b2{background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.3)}
+  .b3{background:rgba(248,113,113,.1);color:var(--red);border:1px solid rgba(248,113,113,.3)}
+
+  /* GRID */
+  .grid{max-width:1200px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(auto-fill,minmax(500px,1fr));gap:15px}
+
+  /* CARDS */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+  .card[data-a="1"]{--ac:var(--a1)}.card[data-a="2"]{--ac:var(--a2)}.card[data-a="3"]{--ac:var(--a3)}.card[data-a="4"]{--ac:var(--a4)}.card[data-a="5"]{--ac:var(--a5)}
+  .ch{background:linear-gradient(135deg,rgba(255,255,255,.04),transparent);border-bottom:1px solid var(--border);padding:16px 18px;display:flex;align-items:flex-start;gap:13px}
+  .num{flex-shrink:0;width:34px;height:34px;border-radius:9px;background:var(--ac);color:#000;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
+  .ttl{flex:1;min-width:0}
+  .tname{font-size:15px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:3px}
+  .tperf{font-size:11px;color:var(--muted);font-style:italic;font-family:'JetBrains Mono',monospace}
+  .badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+  .badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;padding:2px 7px;border-radius:4px}
+  .br{background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.3)}
+  .ba{background:rgba(251,146,60,.15);color:var(--orange);border:1px solid rgba(251,146,60,.3)}
+  .bg{background:rgba(74,222,128,.15);color:var(--green);border:1px solid rgba(74,222,128,.3)}
+  .cb{padding:14px 18px;flex:1}
+  .rat{font-size:13px;color:#c4c8dc;line-height:1.65;border-left:3px solid var(--ac);padding-left:11px;margin-bottom:14px;opacity:.9}
+  .ll{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .lg{display:flex;flex-wrap:wrap;gap:5px}
+  .rl{display:inline-flex;align-items:center;gap:4px;padding:4px 9px;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;border:1px solid;transition:background .15s,transform .12s}
+  .rl:hover{transform:translateY(-1px)}
+  .rv{color:#ff8080;border-color:rgba(255,128,128,.3);background:rgba(255,128,128,.06)}.rv:hover{background:rgba(255,128,128,.14)}
+  .rp{color:var(--a3);border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.06)}.rp:hover{background:rgba(52,211,153,.14)}
+  .rt{color:var(--a4);border-color:rgba(96,165,250,.3);background:rgba(96,165,250,.06)}.rt:hover{background:rgba(96,165,250,.14)}
+
+  /* NEXT */
+  .nw{max-width:1200px;margin:40px auto 0;padding:0 48px}
+  .nb{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--a3);border-radius:10px;padding:20px 26px}
+  .nb h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--a3);margin-bottom:7px}
+  .nb p{font-size:14px;color:var(--muted);margin-bottom:8px}.nb p:last-child{margin-bottom:0}
+  .nb p strong{color:var(--text)}
+
+  footer{max-width:1200px;margin:36px auto 0;padding:22px 48px 0;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:7px}
+
+  @media(max-width:700px){
+    .hero,.intro-wrap,.scores-wrap,.band-wrap,.grid,.nw,footer{padding-left:18px;padding-right:18px}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Kip McGrath Bedford South · GCSE Mathematics Foundation Tier</div>
+    <h1>Revision Priority Plan<br><em>Sorayah Bell</em></h1>
+    <p class="hero-sub">20 topics chosen for accessibility — start at Topic 1 and work through in order. Every topic here is achievable. Do not skip ahead.</p>
+    <div class="pills">
+      <span class="pill p1">📋 Year 11 · Foundation Tier</span>
+      <span class="pill p2">🎯 Current: Grade 3</span>
+      <span class="pill p3">📅 March 2026</span>
+      <span class="pill p4">🔗 Corbett Maths links verified</span>
+    </div>
+  </div>
+</div>
+
+<div class="intro-wrap">
+  <div class="intro-box">
+    <strong>How to use this plan:</strong> Work through the topics <strong>in order — do not skip ahead.</strong> For each topic: (1) watch the short <strong>video</strong>, (2) attempt the <strong>Practice Questions</strong>, (3) check your answers on the same page. The topics at the top are the easiest and will give you marks the fastest. <strong>Master these first.</strong>
+  </div>
+</div>
+
+<div class="scores-wrap">
+  <div class="scores-grid">
+    <div class="sc m1"><div class="lbl">Mock 2F Set 7 (13 Mar)</div><div class="val">37<span style="font-size:.9rem;color:var(--muted)">/80</span></div><div class="sub">MEG 3 · 43 marks dropped</div></div>
+    <div class="sc m2"><div class="lbl">Mock 3F Set 7 (13 Mar)</div><div class="val">30<span style="font-size:.9rem;color:var(--muted)">/80</span></div><div class="sub">MEG 2 · 50 marks dropped</div></div>
+    <div class="sc gap"><div class="lbl">Marks retrievable (est.)</div><div class="val">~35</div><div class="sub">From these 20 topics alone</div></div>
+    <div class="sc tgt"><div class="lbl">Focus areas</div><div class="val" style="font-size:1.3rem;margin-top:4px">Number · Measure<br>Data · Basic Algebra</div></div>
+  </div>
+</div>
+
+<!-- BAND 1 -->
+<div class="band-wrap"><span class="band b1">⭐ Band 1 — Topics 1–7: The absolute basics. No tricks, no formulas to remember. Start here.</span></div>
+<div class="grid" id="b1"></div>
+
+<!-- BAND 2 -->
+<div class="band-wrap"><span class="band b2">📊 Band 2 — Topics 8–14: Reading data, fractions and percentages. Visual and procedural.</span></div>
+<div class="grid" id="b2"></div>
+
+<!-- BAND 3 -->
+<div class="band-wrap"><span class="band b3">🔢 Band 3 — Topics 15–20: Basic algebra. Learn the method once, use it every time.</span></div>
+<div class="grid" id="b3"></div>
+
+<div class="nw">
+  <div class="nb">
+    <h3>What this plan does not include — and why</h3>
+    <p>Topics such as <strong>Changing the Subject, Quadratic Graphs, Standard Form, Linear Inequalities, and Forming Complex Equations</strong> have been deliberately excluded. These require a level of abstract algebraic reasoning that should only be attempted once the 20 topics above are fully secure. Attempting them too early wastes revision time.</p>
+    <p>Once all 20 topics are consolidated, the next step would be: <strong>Sequences & nth Term, Straight Line Graphs, Basic Bearings, and Simple Ratio Sharing</strong>.</p>
+  </div>
+</div>
+
+<footer>
+  <span>Kip McGrath Bedford South · mail@bedfordacademictutoring.co.uk · www.bedfordacademictutoring.co.uk</span>
+  <span>All resource links verified via corbettmaths.com · March 2026</span>
+</footer>
+
+<script>
+const bands = {
+  b1: [
+    {
+      n:1, name:"Place Value & Reading Numbers",
+      perf:"Mock 2F Q1: 1/1 ✓ — confidence builder and foundation for all number work.",
+      badges:[{l:"1/1",t:"bg"}],
+      rat:"Understanding what each digit means — units, tens, hundreds, thousands. This underpins every number topic on the paper. Sorayah is already getting this right — a strong, confident starting point.",
+      links:[
+        {l:"Video: Place Value",       u:"https://corbettmaths.com/2012/08/20/place-value/",                            t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/22/place-value-practice-questions/",         t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/place-value-pdf.pdf",     t:"rt"},
+      ]
+    },
+    {
+      n:2, name:"Rounding to the Nearest Integer",
+      perf:"Mock 3F Q1: 0/1.",
+      badges:[{l:"0/1",t:"br"}],
+      rat:"One rule: look at the next digit — if it is 5 or more, round up; if less, round down. One mark, one rule. This should never be dropped in an exam.",
+      links:[
+        {l:"Video: Rounding",          u:"https://corbettmaths.com/2013/10/24/rounding-to-the-nearest-whole-number/",   t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/29/rounding-practice-questions/",            t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/round-to-nearest-number-pdf.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:3, name:"Ordering Decimals",
+      perf:"Mock 2F Q2: 0/1 · Mock 3F Q11: 0/2.",
+      badges:[{l:"0/1",t:"br"},{l:"0/2",t:"br"}],
+      rat:"Compare decimals digit by digit from left to right. Three marks dropped across both papers on a skill that requires only careful reading — no calculation at all.",
+      links:[
+        {l:"Video: Ordering Decimals", u:"https://corbettmaths.com/2012/08/10/ordering-decimals-video/",                t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/28/ordering-decimals-practice-questions/",  t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2018/11/Ordering-Decimals-pdf.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:4, name:"Perimeter",
+      perf:"Mock 2F Q29: 0/4.",
+      badges:[{l:"0/4",t:"br"}],
+      rat:"Perimeter = add up all the sides. Nothing more. Four marks lost on the most elementary measurement question on the paper. One short session should recover all four marks.",
+      links:[
+        {l:"Video: Perimeter",         u:"https://corbettmaths.com/2012/08/10/perimeter/",                              t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/22/perimeter-practice-questions/",          t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/perimeter-pdf.pdf",      t:"rt"},
+      ]
+    },
+    {
+      n:5, name:"Area of a Rectangle",
+      perf:"Mock 2F Q18: 0/4.",
+      badges:[{l:"0/4",t:"br"}],
+      rat:"Area = length × width. One formula, four marks. The simplest geometry calculation on the specification. Once this formula is memorised it takes about 30 seconds to answer — these marks must not be dropped.",
+      links:[
+        {l:"Video: Area of Rectangle", u:"https://corbettmaths.com/2013/12/20/area-of-a-rectangle-video-45/",          t:"rv"},
+        {l:"Video: Area of Triangle",  u:"https://corbettmaths.com/2013/12/20/area-of-a-triangle-video-49/",           t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/22/area-of-a-rectangle-practice-questions/",t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/area-of-a-rectangle-pdf1.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:6, name:"Time & Money Questions",
+      perf:"Mock 2F Q11 & Q10b: green ✓ — keep these sharp.",
+      badges:[{l:"green",t:"bg"}],
+      rat:"Sorayah is already scoring here — included to maintain confidence and consistency. Time and money questions appear on every Foundation paper and are entirely accessible. Regular short practice keeps these marks secure.",
+      links:[
+        {l:"Video: Time",              u:"https://corbettmaths.com/2012/08/10/time/",                                   t:"rv"},
+        {l:"Video: Money",             u:"https://corbettmaths.com/2012/08/10/money/",                                  t:"rv"},
+        {l:"Practice Qs: Time",        u:"https://corbettmaths.com/2019/08/29/time-practice-questions/",               t:"rp"},
+        {l:"Practice Qs: Money",       u:"https://corbettmaths.com/2019/08/29/money-practice-questions/",              t:"rp"},
+      ]
+    },
+    {
+      n:7, name:"Metric Units & Conversions",
+      perf:"Mock 2F Q10a: 1/1 ✓ — extend to converting between units.",
+      badges:[{l:"1/1",t:"bg"}],
+      rat:"Sorayah can read metric units. The next step is converting between them — km↔m, m↔cm, kg↔g, l↔ml. These are memory tasks, not reasoning tasks: learn the conversion facts and apply them. High mark yield for low effort.",
+      links:[
+        {l:"Video: Metric Units",      u:"https://corbettmaths.com/2013/03/19/metric-units/",                           t:"rv"},
+        {l:"Video: Converting Units",  u:"https://corbettmaths.com/2013/03/19/converting-units/",                       t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/29/converting-units-of-length-practice-questions/",t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/metric-units-pdf1.pdf",   t:"rt"},
+      ]
+    },
+  ],
+
+  b2: [
+    {
+      n:8, name:"Pictograms & Bar Charts",
+      perf:"Mock 2F: pictograms green ✓ — extend to all chart types.",
+      badges:[{l:"green",t:"bg"}],
+      rat:"Reading data from pictograms and bar charts is a visual skill — count and add, nothing more. Sorayah performs well here. Consolidating this into all chart types (frequency tables, two-way tables) secures an easy block of marks.",
+      links:[
+        {l:"Video: Pictograms",        u:"https://corbettmaths.com/2012/08/10/pictograms/",                             t:"rv"},
+        {l:"Video: Bar Charts",        u:"https://corbettmaths.com/2012/08/10/bar-charts/",                             t:"rv"},
+        {l:"Practice Qs: Pictograms",  u:"https://corbettmaths.com/2019/08/29/pictograms-practice-questions/",         t:"rp"},
+        {l:"Practice Qs: Bar Charts",  u:"https://corbettmaths.com/2019/08/28/bar-charts-practice-questions/",         t:"rp"},
+      ]
+    },
+    {
+      n:9, name:"Scatter Diagrams",
+      perf:"Mock 2F Q28: 0/4.",
+      badges:[{l:"0/4",t:"br"}],
+      rat:"Four marks for: describing correlation (positive/negative/none), drawing a line of best fit, and reading off an estimate. These are visual judgement tasks — no formula required. All four marks are accessible after one session.",
+      links:[
+        {l:"Video: Scatter Graphs",    u:"https://corbettmaths.com/2012/08/10/scatter-graphs-correlation/",             t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/29/scatter-graphs-practice-questions/",     t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/scatter-graphs-pdf2.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:10, name:"Frequency Trees",
+      perf:"Mock 3F Q16: 0/5.",
+      badges:[{l:"0/5",t:"br"}],
+      rat:"Five marks for filling in a branching diagram where the numbers on each branch must add up correctly. Once the structure is understood, every frequency tree follows exactly the same pattern. Highest single-topic mark yield in this plan.",
+      links:[
+        {l:"Video: Frequency Trees",   u:"https://corbettmaths.com/2018/08/31/frequency-trees-video/",                 t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/28/frequency-trees-practice-questions/",   t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/2019/10/08/frequency-trees-textbook-exercise/",    t:"rt"},
+      ]
+    },
+    {
+      n:11, name:"Basic Probability",
+      perf:"Mock 2F Q9: 0/4 · Mock 3F Q20: 0/4.",
+      badges:[{l:"0/4",t:"br"},{l:"0/4",t:"br"}],
+      rat:"Eight marks lost. At basic level, probability is just a fraction: number of ways the event can happen ÷ total number of outcomes. That is the whole skill for the first 2 marks of any probability question. Learn this one idea first.",
+      links:[
+        {l:"Video: Basic Probability", u:"https://corbettmaths.com/2013/03/25/probability/",                            t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/29/probability-practice-questions/",        t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/probability-pdf2.pdf",   t:"rt"},
+      ]
+    },
+    {
+      n:12, name:"Fractions of an Amount",
+      perf:"Mock 2F Q4: 1/1 ✓ · Extended FDP: 0/4 on both papers.",
+      badges:[{l:"1/1",t:"bg"},{l:"0/4",t:"br"}],
+      rat:"Sorayah can do simple fraction-of-amount questions but breaks down when they appear inside longer questions. Practise the method consistently: ¾ of 48 means 48 ÷ 4 × 3. Build speed and reliability until it becomes automatic.",
+      links:[
+        {l:"Video: Fractions of Amount",u:"https://corbettmaths.com/2012/08/20/fractions-of-amounts/",                 t:"rv"},
+        {l:"Practice Qs",               u:"https://corbettmaths.com/2019/08/29/fraction-of-an-amount-practice-questions/",t:"rp"},
+        {l:"Textbook Ex.",              u:"https://corbettmaths.com/wp-content/uploads/2013/02/fractions-of-amounts-pdf2.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:13, name:"FDP Conversions (Fractions ↔ Decimals ↔ Percentages)",
+      perf:"Mock 2F Q27: 0/4 · Mock 3F Q11: 0/2 · Mock 3F Q15: 0/4.",
+      badges:[{l:"0/4",t:"br"},{l:"0/4",t:"br"}],
+      rat:"Ten marks lost to FDP across both papers — the single largest source of preventable losses. Start by memorising key facts as a table (½=0.5=50%, ¼=0.25=25%, ¾=0.75=75%, ⅕=0.2=20%), then learn the conversion method for any value.",
+      links:[
+        {l:"Video: FDP Conversions",   u:"https://corbettmaths.com/2013/02/15/fdp/",                                   t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/29/fractions-decimals-and-percentages-practice-questions/",t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/2019/09/25/fractions-decimals-and-percentages-textbook-exercise/",t:"rt"},
+      ]
+    },
+    {
+      n:14, name:"Percentages of an Amount",
+      perf:"Mock 2F Q12a: 0/3 · Mock 3F Q2: 0/1.",
+      badges:[{l:"0/3",t:"br"},{l:"0/1",t:"br"}],
+      rat:"Four marks lost. Use the 10% method: find 10% by dividing by 10, then build up what you need (e.g. 30% = 3 × 10%). This is reliable, visual, and easy to remember. It also feeds directly into the next topic.",
+      links:[
+        {l:"Video: % Amount (Non-Calc)",u:"https://corbettmaths.com/2012/08/20/percentages-of-amounts-non-calculator/",t:"rv"},
+        {l:"Video: % Amount (Calc)",    u:"https://corbettmaths.com/2016/08/21/percentages/",                          t:"rv"},
+        {l:"Practice Qs (Non-Calc)",    u:"https://corbettmaths.com/2019/09/02/percentages-of-an-amount-non-calculator-practice-questions/",t:"rp"},
+        {l:"Textbook Ex.",              u:"https://corbettmaths.com/wp-content/uploads/2018/11/Percentages-of-amounts-234-pdf.pdf",t:"rt"},
+      ]
+    },
+  ],
+
+  b3: [
+    {
+      n:15, name:"Percentage Increase & Decrease",
+      perf:"Mock 2F Q23: 0/3 · Mock 3F Q26: 0/5.",
+      badges:[{l:"0/3",t:"br"},{l:"0/5",t:"br"}],
+      rat:"Eight marks lost. Builds directly on Topic 14. Once percentage of an amount is secure, increase and decrease follow naturally: find the percentage, then add or subtract it from the original. Compound interest uses the same idea with a calculator.",
+      links:[
+        {l:"Video: % Increase/Decrease",u:"https://corbettmaths.com/2012/08/21/increasing-or-decreasing-by-a-percentage/",t:"rv"},
+        {l:"Video: Compound Interest",  u:"https://corbettmaths.com/2013/12/24/compound-interest-video-27/",              t:"rv"},
+        {l:"Practice Qs: Inc/Dec",      u:"https://corbettmaths.com/2019/09/02/increasing-decreasing-by-a-percentage-practice-questions/",t:"rp"},
+        {l:"Practice Qs: Compound Int.",u:"https://corbettmaths.com/2019/09/02/compound-interest-practice-questions/",    t:"rp"},
+        {l:"Textbook Ex.",              u:"https://corbettmaths.com/wp-content/uploads/2018/11/Increasing-by-a-Percentage-pdf.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:16, name:"Writing & Simplifying Ratios",
+      perf:"Mock 2F Q12b: 0/2 · Mock 3F Q10: 0/1.",
+      badges:[{l:"0/2",t:"br"},{l:"0/1",t:"br"}],
+      rat:"Three marks lost. A ratio is just a way of comparing two quantities using a colon — e.g. 3:5. Simplifying means dividing both numbers by the same value. Simple and learnable in one session.",
+      links:[
+        {l:"Video: Ratio",             u:"https://corbettmaths.com/2021/03/10/ratio-videos/",                            t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/09/02/ratio-practice-questions/",               t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/ratio-pdf2.pdf",          t:"rt"},
+      ]
+    },
+    {
+      n:17, name:"Algebra: Collecting Like Terms & Simplifying",
+      perf:"Mock 2F Q8: partial · Mock 3F Q4: partial.",
+      badges:[{l:"partial",t:"ba"},{l:"partial",t:"ba"}],
+      rat:"Simplifying means collecting terms that are the same — 3x + 2x = 5x, and 4y − y = 3y. Numbers and letters are kept separate. This is the entry point for all algebra and must be automatic before attempting equations.",
+      links:[
+        {l:"Video: Collecting Like Terms",u:"https://corbettmaths.com/2013/12/28/collecting-like-terms-video-9/",       t:"rv"},
+        {l:"Video: Simplifying",          u:"https://corbettmaths.com/2013/03/13/simplifying-expressions/",             t:"rv"},
+        {l:"Practice Qs",                 u:"https://corbettmaths.com/2019/08/22/collecting-like-terms-practice-questions/",t:"rp"},
+        {l:"Textbook Ex.",                u:"https://corbettmaths.com/wp-content/uploads/2013/02/collecting-like-terms-pdf3.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:18, name:"Algebra: Substitution",
+      perf:"Not directly tested in these mocks — foundational skill for many other topics.",
+      badges:[{l:"foundational",t:"ba"}],
+      rat:"Substitution means replacing a letter with a number and working out the answer — e.g. if a = 3, find 2a + 1 = 7. This is the most accessible algebra skill on the paper and requires nothing beyond arithmetic. It appears in multiple question types.",
+      links:[
+        {l:"Video: Substitution",      u:"https://corbettmaths.com/2012/08/20/substitution-into-expressions/",          t:"rv"},
+        {l:"Practice Qs",              u:"https://corbettmaths.com/2019/08/22/substitution-practice-questions/",        t:"rp"},
+        {l:"Textbook Ex.",             u:"https://corbettmaths.com/wp-content/uploads/2013/02/substitution-pdf2.pdf",   t:"rt"},
+      ]
+    },
+    {
+      n:19, name:"Algebra: Solving Simple Equations (1 and 2-step)",
+      perf:"Mock 2F Q22: partial · Mock 3F Q13: 4/6.",
+      badges:[{l:"partial",t:"ba"},{l:"4/6",t:"ba"}],
+      rat:"Solving simple equations means finding what the letter is worth — do the opposite operation to both sides. 1-step: x + 5 = 12, so x = 7. 2-step: 2x + 3 = 11, so 2x = 8, so x = 4. These two types alone cover the majority of marks on equation questions.",
+      links:[
+        {l:"Video: Equations (1-step)", u:"https://corbettmaths.com/2013/03/19/solving-equations-1/",                   t:"rv"},
+        {l:"Video: Equations (2-step)", u:"https://corbettmaths.com/2013/03/19/solving-equations-2/",                   t:"rv"},
+        {l:"Practice Qs",               u:"https://corbettmaths.com/2019/08/28/solving-equations-practice-questions/",  t:"rp"},
+        {l:"Textbook Ex.",              u:"https://corbettmaths.com/wp-content/uploads/2013/02/solving-equations-pdf3.pdf",t:"rt"},
+      ]
+    },
+    {
+      n:20, name:"Angle Facts (Straight Line, Triangle & Around a Point)",
+      perf:"Mock 3F Q14: 0/4.",
+      badges:[{l:"0/4",t:"br"}],
+      rat:"Four marks lost. The three rules to memorise: angles on a straight line add up to 180°, angles in a triangle add up to 180°, and angles around a point add up to 360°. These three facts alone answer the majority of Foundation angle questions.",
+      links:[
+        {l:"Video: Angles (Straight Line)",u:"https://corbettmaths.com/2013/12/19/angles-straight-line-video-35/",      t:"rv"},
+        {l:"Video: Angles (Triangle)",     u:"https://corbettmaths.com/2012/08/10/angles-in-a-triangle/",               t:"rv"},
+        {l:"Practice Qs",                  u:"https://corbettmaths.com/2019/08/22/missing-angles-practice-questions/",  t:"rp"},
+        {l:"Textbook Ex.",                 u:"https://corbettmaths.com/wp-content/uploads/2013/02/angles-in-a-triangle-pdf1.pdf",t:"rt"},
+      ]
+    },
+  ]
+};
+
+function renderBand(id, items) {
+  const container = document.getElementById(id);
+  const ac = [1,2,3,4,5];
+  items.forEach((t, i) => {
+    const a = ac[i % 5];
+    const bdg = t.badges.map(b => `<span class="badge ${b.t}">${b.l}</span>`).join('');
+    const lnk = t.links.map(l =>
+      `<a class="rl ${l.t}" href="${l.u}" target="_blank" rel="noopener">${l.l}</a>`
+    ).join('');
+    container.innerHTML += `
+      <div class="card" data-a="${a}">
+        <div class="ch">
+          <div class="num">${String(t.n).padStart(2,'0')}</div>
+          <div class="ttl">
+            <div class="tname">${t.name}</div>
+            <div class="tperf">${t.perf}</div>
+            <div class="badges">${bdg}</div>
+          </div>
+        </div>
+        <div class="cb">
+          <p class="rat">${t.rat}</p>
+          <div class="ll">Corbett Maths Resources</div>
+          <div class="lg">${lnk}</div>
+        </div>
+      </div>`;
+  });
+}
+
+renderBand('b1', bands.b1);
+renderBand('b2', bands.b2);
+renderBand('b3', bands.b3);
+</script>
+</body>
+</html>
